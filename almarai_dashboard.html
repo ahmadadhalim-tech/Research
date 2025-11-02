@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Almarai Share Dashboard — Saudi Arabia (Health & Family Cluster)</title>
+<style>
+:root{--bg:#0b1223;--card:#0f172a;--text:#e5e7eb;--muted:#94a3b8;--accent:#22d3ee;--accent-2:#7dd3fc;--border:#243041;--good:#22c55e;--flat:#f59e0b;--down:#ef4444;--chip:#111827}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,rgba(34,211,238,.15),transparent),linear-gradient(180deg,#0b1223,#0a1020,#0b1223);color:var(--text);font-family:-apple-system,system-ui,Segoe UI,Roboto,Helvetica,Arial,'Noto Sans');line-height:1.55}
+.wrap{max-width:1280px;margin:24px auto;padding:0 16px}.small{font-size:12px;color:var(--muted)}h1{margin:0 0 6px 0;font-size:28px}h2{margin:0 0 8px 0;font-size:18px}
+header{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.btn{appearance:none;border:1px solid var(--border);background:var(--chip);color:var(--text);padding:8px 12px;border-radius:10px;cursor:pointer;font-size:13px}.btn.primary{border-color:transparent;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#001018;font-weight:700}
+.grid{display:grid;gap:14px}.g-4{grid-template-columns:repeat(4,minmax(0,1fr))}.g-3{grid-template-columns:repeat(3,minmax(0,1fr))}.g-2{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:1000px){.g-4{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.g-4,.g-3,.g-2{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:16px;padding:16px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.kpi .label{color:var(--muted);font-size:12px}.kpi .value{font-size:30px;font-weight:800}.trend{display:inline-flex;gap:6px;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--border)}.trend.up{color:var(--good)}.trend.flat{color:var(--flat)}.trend.down{color:var(--down)}
+.bar{height:12px;background:#0a0f1c;border:1px solid var(--border);border-radius:999px;overflow:hidden}.bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0%;transition:width .9s ease}
+.badge{font-size:11px;padding:3px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}.divider{height:1px;background:var(--border);margin:10px 0 14px 0}
+.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{padding:10px 8px;border-bottom:1px dashed var(--border);text-align:right}.table th{color:#a5b4fc}
+.spark{display:flex;gap:6px;align-items:flex-end;height:36px}.spark .col{width:14px;background:linear-gradient(180deg,var(--accent),var(--accent-2));border-radius:4px 4px 0 0;opacity:.85}
+.hm{display:grid;grid-template-columns:140px repeat(5,1fr);gap:6px;align-items:center}.hm .hcell{background:#0a0f1c;border:1px solid var(--border);padding:8px;border-radius:10px;display:flex;align-items:center;justify-content:center}.hm .label{color:var(--muted);text-align:right;padding-right:6px}.hm .up{color:var(--good)}.hm .flat{color:var(--flat)}
+.checkgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.ck{display:flex;align-items:center;gap:8px;background:#0a0f1c;border:1px solid var(--border);padding:10px;border-radius:12px;font-size:12px}.ck input{accent-color:#22d3ee}
+.highlight{outline:2px solid var(--accent)}
+</style>
+</head>
+<body>
+<div class='wrap'>
+<header>
+  <div>
+    <h1>Almarai Share Dashboard — Saudi Arabia</h1>
+    <div class='small'>Scope: Liquid Dairy (Fresh + UHT), Fermented (Zabadi/Laban incl. Greek/Drinkable), and RTD Protein. Update: 1 Nov 2025. All values nominal.</div>
+  </div>
+  <div class='controls'>
+    <button class='btn' id='printBtn'>Export / Print</button>
+    <button class='btn' id='resetBtn'>Reset Focus</button>
+    <span class='badge'>Cluster: Health & Family</span>
+  </div>
+</header>
+
+<section class='grid g-4'>
+  <div class='card kpi' data-key='total share overall dairy trajectory'>
+    <div class='label'>Value Share — KSA Dairy</div>
+    <div class='row'><div class='value'>49.6%</div><span class='trend up'>Up</span></div>
+    <div class='spark'><div class='col' style='height:28px' aria-label='2023 48.7%'></div><div class='col' style='height:32px' aria-label='2024 49.6%'></div></div>
+    <div class='small'>2023: 48.7% → 2024: 49.6%</div>
+    <div class='small'>Source: <a target='_blank' href='https://annualreport.almarai.com/assets/img/pdfs/Dairy.pdf'>Almarai — Dairy</a></div>
+  </div>
+  <div class='card kpi' data-key='protein rtd'>
+    <div class='label'>Protein Milk — Value Share (2024)</div>
+    <div class='row'><div class='value'>35.3%</div><span class='trend up'>Up</span></div>
+    <div class='bar'><span style='width:35.3%'></span></div>
+    <div class='small'>Source: <a target='_blank' href='https://annualreport.almarai.com/assets/img/pdfs/Operating%20Review.pdf'>Operating Review</a></div>
+  </div>
+  <div class='card kpi' data-key='uht'>
+    <div class='label'>UHT — Value Share (2024)</div>
+    <div class='row'><div class='value'>20.6%</div><span class='trend up'>Up</span></div>
+    <div class='bar'><span style='width:20.6%'></span></div>
+    <div class='small'>Source: <a target='_blank' href='https://annualreport.almarai.com/assets/img/pdfs/Dairy.pdf'>Almarai — Dairy</a></div>
+  </div>
+  <div class='card' data-key='macro digital readiness inflation fx timing'>
+    <div class='label'>Market & Digital Context</div>
+    <div class='row'>
+      <span class='badge'>Internet penetration: <b>99%</b></span>
+      <span class='badge'>Local e-comm share: <b>93.1%</b></span>
+      <span class='badge'>CPI Aug-2025: <b>2.3%</b></span>
+      <span class='badge'>FX: <b>SAR 3.75 / USD</b></span>
+      <span class='badge'>Peak usage: <b>9–11 pm</b></span>
+    </div>
+    <div class='divider'></div>
+    <div class='small'>Sources: <a target='_blank' href='https://www.cst.gov.sa/en/media-center/news/N2025051200'>CST</a> · <a target='_blank' href='https://www.stats.gov.sa/documents/d/guest/cpi-aug-2025-en-pdf'>GASTAT CPI</a> · <a target='_blank' href='https://www.sama.gov.sa/en-US/FinExc/pages/currency.aspx'>SAMA FX</a></div>
+  </div>
+</section>
+
+<section class='card' style='margin-top:14px' data-key='category shares fresh laban zabadi uht protein'>
+  <div class='row' style='justify-content:space-between'>
+    <h2>Category Shares (Value %, 2024)</h2>
+    <div class='row'><span class='badge'>Fresh Milk</span><span class='badge'>Fresh Laban</span><span class='badge'>Zabadi</span><span class='badge'>UHT</span><span class='badge'>Protein Milk</span></div>
+  </div>
+  <div class='grid g-3' style='margin-top:10px'>
+    <div><div class='label'>Fresh Milk</div><div class='bar'><span style='width:63.7%'></span></div><div class='small'><b>63.7%</b> <span class='trend flat'>Flat/Up</span></div></div>
+    <div><div class='label'>Fresh Laban</div><div class='bar'><span style='width:65.8%'></span></div><div class='small'><b>65.8%</b> <span class='trend flat'>Flat/Up</span></div></div>
+    <div><div class='label'>Zabadi</div><div class='bar'><span style='width:61.5%'></span></div><div class='small'><b>61.5%</b> <span class='trend flat'>Flat/Up</span></div></div>
+    <div><div class='label'>UHT</div><div class='bar'><span style='width:20.6%'></span></div><div class='small'><b>20.6%</b> <span class='trend up'>Up</span></div></div>
+    <div><div class='label'>Protein Milk</div><div class='bar'><span style='width:35.3%'></span></div><div class='small'><b>35.3%</b> <span class='trend up'>Up</span></div></div>
+  </div>
+  <div class='small'>Source: <a target='_blank' href='https://annualreport.almarai.com/assets/img/pdfs/Dairy.pdf'>Almarai — Dairy</a> | <a target='_blank' href='https://annualreport.almarai.com/assets/img/pdfs/Operating%20Review.pdf'>Operating Review</a></div>
+</section>
+
+<section class='card' style='margin-top:14px' data-key='channels mt gt horeca ecommerce quick'>
+  <h2>Channel Momentum (2024–2025)</h2>
+  <div class='hm small' style='margin-top:8px'>
+    <div class='label'>Channel</div><div class='label'>Momentum</div><div class='label'>Why it matters</div><div class='label'>Tactics</div><div class='label'>Primary KPI</div><div class='label'>Source</div>
+    <div class='label'>Modern Trade (MT)</div><div class='hcell up'>⬆️</div><div class='hcell'>Planogram + Mix upgrade</div><div class='hcell'>Multipacks, disciplined TPR</div><div class='hcell'>+Value, Planogram compliance</div><div class='hcell'><a target='_blank' href='https://annualreport.almarai.com/assets/img/pdfs/Dairy.pdf'>AR</a></div>
+    <div class='label'>General Trade (GT)</div><div class='hcell up'>⬆️</div><div class='hcell'>Breadth of coverage</div><div class='hcell'>Cold-space & facings</div><div class='hcell'>Stores w/ functional cooling</div><div class='hcell'><a target='_blank' href='https://annualreport.almarai.com/assets/img/pdfs/Dairy.pdf'>AR</a></div>
+    <div class='label'>eCommerce (eCom)</div><div class='hcell up'>⬆️</div><div class='hcell'>High digital readiness</div><div class='hcell'>First-page + fast fulfilment</div><div class='hcell'>CTR → Conversion</div><div class='hcell'><a target='_blank' href='https://www.cst.gov.sa/en/media-center/news/N2025051200'>CST</a></div>
+    <div class='label'>Quick Commerce</div><div class='hcell up'>⬆️</div><div class='hcell'>Instant needs / On-the-go</div><div class='hcell'>NOW/Minutes delivery</div><div class='hcell'>SLA delivery</div><div class='hcell'><a target='_blank' href='https://www.cst.gov.sa/en/media-center/news/N2025051200'>CST</a></div>
+    <div class='label'>HoReCa</div><div class='hcell flat'>↔︎/⬆️</div><div class='hcell'>Contracts / professional packs</div><div class='hcell'>Chef packs & portioned SKUs</div><div class='hcell'>Active contracts</div><div class='hcell'><a target='_blank' href='https://almmedia.almarai.com/FinancialReports/Almarai-Annual-Report-2025---English-LR323202573257AM.pdf'>AR</a></div>
+  </div>
+</section>
+
+<section class='card' style='margin-top:14px' data-key='what if simulator'>
+  <h2>Promo Effect — Mini What-If</h2>
+  <div class='small'>Estimate the impact of a <b>TPR</b> on value, volume and gross margin for a single SKU. Elasticity ranges are indicative only and should be calibrated with local NIQ/Kantar panels.</div>
+  <div class='grid g-3' style='margin-top:10px'>
+    <div><label class='small'>Baseline price (SAR)</label><input type='number' id='price' value='8.00' step='0.05' min='0' style='width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:#0a0f1c;color:var(--text)'></div>
+    <div><label class='small'>Baseline weekly volume (units / L / Kg)</label><input type='number' id='vol' value='10000' step='100' min='0' style='width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:#0a0f1c;color:var(--text)'></div>
+    <div><label class='small'>Gross margin (%)</label><input type='number' id='gm' value='35' step='0.5' min='0' max='100' style='width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:#0a0f1c;color:var(--text)'></div>
+    <div><label class='small'>TPR discount (%)</label><input type='number' id='disc' value='10' step='0.5' min='0' max='90' style='width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:#0a0f1c;color:var(--text)'></div>
+    <div><label class='small'>Elasticity (– for price ↓ → volume ↑)</label><select id='elas' style='width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:#0a0f1c;color:var(--text)'><option value='-0.4'>Liquid Dairy (−0.4)</option><option value='-0.6' selected>Fermented (−0.6)</option><option value='-1.0'>RTD Protein (−1.0)</option></select></div>
+    <div><label class='small'>Cannibalization / leakage (%)</label><input type='number' id='cann' value='20' step='1' min='0' max='100' style='width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:#0a0f1c;color:var(--text)'></div>
+  </div>
+  <div class='row' style='margin-top:10px'><button class='btn primary' id='runSim'>Run Simulation</button><span class='small' style='margin-inline-start:8px'>Success if <b>ΔGross Margin ≥ 0</b> and <b>ΔValue Share</b> expected positive.</span></div>
+  <div id='simOut' style='display:none;margin-top:10px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.25);padding:10px;border-radius:10px;font-size:13px'></div>
+</section>
+
+<section class='card' style='margin-top:14px' data-key='risk compliance checklist'>
+  <h2>Risk & Compliance Checklist</h2>
+  <div class='checkgrid small' style='margin-top:6px'>
+    <label class='ck'><input type='checkbox'> PL pricing shield (Good/Better/Best) active in MT & eCom</label>
+    <label class='ck'><input type='checkbox'> Claims dossiers for <b>lactose-free / high-protein</b> validated (SFDA)</label>
+    <label class='ck'><input type='checkbox'> RTD recipes reviewed vs. ≥75% milk threshold (ZATCA)</label>
+    <label class='ck'><input type='checkbox'> Dairy input costs monitored (FAO Dairy index)</label>
+    <label class='ck'><input type='checkbox'> Digital OOS auto-substitution set for LF/RTD</label>
+    <label class='ck'><input type='checkbox'> eCom first-page keywords & Buy Box monitored weekly</label>
+  </div>
+  <div class='divider'></div>
+  <div class='small'>Refs: <a target='_blank' href='https://www.sfda.gov.sa/en/regulations'>SFDA</a> · <a target='_blank' href='https://zatca.gov.sa/en/RulesRegulations/Taxes/Pages/excise-tax.aspx'>ZATCA</a> · <a target='_blank' href='https://www.fao.org/markets-and-trade/commodities-overview/basic-foods/fao-dairy-price-index/en'>FAO Dairy</a> · <a target='_blank' href='https://nielseniq.com'>NIQ</a></div>
+</section>
+
+<section class='card' style='margin-top:14px' data-key='sources'>
+  <h2>Direct Sources</h2>
+  <table class='table'>
+    <thead><tr><th>Topic</th><th>Key Figure</th><th>Link</th></tr></thead>
+    <tbody>
+      <tr><td>Overall Dairy Value Share (2023 → 2024)</td><td>48.7% → 49.6%</td><td><a target='_blank' href='https://annualreport.almarai.com/assets/img/pdfs/Dairy.pdf'>Almarai — Dairy</a></td></tr>
+      <tr><td>Fresh Milk / Laban / Zabadi (2024)</td><td>63.7% / 65.8% / 61.5%</td><td><a target='_blank' href='https://annualreport.almarai.com/assets/img/pdfs/Dairy.pdf'>Almarai — Dairy</a></td></tr>
+      <tr><td>UHT (2024)</td><td>20.6%</td><td><a target='_blank' href='https://annualreport.almarai.com/assets/img/pdfs/Dairy.pdf'>Almarai — Dairy</a></td></tr>
+      <tr><td>Protein Milk (2024)</td><td>35.3%</td><td><a target='_blank' href='https://annualreport.almarai.com/assets/img/pdfs/Operating%20Review.pdf'>Operating Review</a></td></tr>
+      <tr><td>Digital Readiness</td><td>Internet 99%, Local sites 93.1%, peak 9–11 pm</td><td><a target='_blank' href='https://www.cst.gov.sa/en/media-center/news/N2025051200'>CST — Saudi Internet Report</a></td></tr>
+      <tr><td>Retail FMCG context (Q3-2024)</td><td>SAR 37.4bn</td><td><a target='_blank' href='https://nielseniq.com/global/en/news-center/2024/ksa-retail-market-sees-modest-growth-with-sar-37-4-billion-in-q3-2024-sales/'>NIQ</a></td></tr>
+      <tr><td>Yogurt market value (2025)</td><td>≈ SAR 5.1bn</td><td><a target='_blank' href='https://www.marketresearch.com/seek/Yogurt-Saudi-Arabia/1752/1345/1.html'>Market Research ref.</a></td></tr>
+      <tr><td>Inflation (Aug-2025)</td><td>2.3% YoY</td><td><a target='_blank' href='https://www.stats.gov.sa/documents/d/guest/cpi-aug-2025-en-pdf'>GASTAT CPI</a></td></tr>
+      <tr><td>FX</td><td>SAR 3.75 / USD</td><td><a target='_blank' href='https://www.sama.gov.sa/en-US/FinExc/pages/currency.aspx'>SAMA</a></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>© 2025 — Executive dashboard. All values nominal. Press <kbd>Export / Print</kbd> to save as PDF. <b>Built by Brandlosofy</b>.</footer>
+</div>
+<script>
+window.addEventListener('load', ()=>{document.querySelectorAll('.bar > span').forEach(el=>{const w=el.style.width;el.style.width='0%';setTimeout(()=>el.style.width=w,80);});});
+document.getElementById('resetBtn').addEventListener('click', ()=>{document.querySelectorAll('.highlight').forEach(el=>el.classList.remove('highlight'));});
+document.getElementById('printBtn').addEventListener('click', ()=>window.print());
+document.querySelectorAll('[data-key]').forEach(card=>{card.addEventListener('click', ()=>{document.querySelectorAll('.highlight').forEach(el=>el.classList.remove('highlight'));card.classList.add('highlight');});});
+function sim(){const p=parseFloat(document.getElementById('price').value)||0;const v=parseFloat(document.getElementById('vol').value)||0;const gm=(parseFloat(document.getElementById('gm').value)||0)/100;const d=(parseFloat(document.getElementById('disc').value)||0)/100;const e=parseFloat(document.getElementById('elas').value)||0;const c=(parseFloat(document.getElementById('cann').value)||0)/100;const baseVal=p*v;const baseGM=baseVal*gm;const newP=p*(1-d);const volLift=v*(Math.abs(e)*d);const cannLoss=volLift*c;const newV=v+volLift-cannLoss;const promoVal=newP*newV;const promoGM=promoVal*gm;const dVal=promoVal-baseVal;const dGM=promoGM-baseGM;const upliftPct=baseVal>0?(dVal/baseVal*100):0;const el=document.getElementById('simOut');el.style.display='block';el.innerHTML='<b>Results</b><br>Base Value: SAR '+baseVal.toLocaleString()+' | Base GM: SAR '+baseGM.toLocaleString()+'<br>Promo Value: SAR '+promoVal.toLocaleString()+' | Promo GM: SAR '+promoGM.toLocaleString()+'<br>ΔValue: <b>'+(dVal>=0?'+':'')+dVal.toLocaleString()+'</b> ('+upliftPct.toFixed(1)+'%) | ΔGross Margin: <b style="color:'+(dGM>=0?'#22c55e':'#ef4444')+'">'+(dGM>=0?'+':'')+dGM.toLocaleString()+'</b>';}
+document.getElementById('runSim')?.addEventListener('click', sim);
+</script>
+</body></html>
